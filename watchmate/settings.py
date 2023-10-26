@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-9vvnw4@hpungl01z!w7&gko-nnsnu^*k(*%q4q!x_n!mxl^_84
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -82,15 +83,19 @@ APPEND_SLASH = False
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'practiceDB',
+#         'USER': 'root',
+#         'PASSWORD': '@Password123',
+#         'HOST': 'localhost',  # Change this if your MySQL server is on a different host
+#         'PORT': '3306',       # Default MySQL port
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'practiceDB',
-        'USER': 'root',
-        'PASSWORD': '@Password123',
-        'HOST': 'localhost',  # Change this if your MySQL server is on a different host
-        'PORT': '3306',       # Default MySQL port
-    }
+    "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))   
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -136,6 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

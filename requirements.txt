@@ -4,10 +4,12 @@ certifi==2023.5.7
 distlib==0.3.6
 Django==4.2.1
 django-cors-headers==4.3.0
+django-database-url==1.0.3
 django-filter==23.3
 djangorestframework==3.14.0
 filelock==3.12.2
 flake8==6.0.0
+gunicorn==21.2.0
 mccabe==0.7.0
 numpy==1.24.3
 packaging==23.1
@@ -18,8 +20,10 @@ platformdirs==3.5.3
 plotly==5.14.1
 pycodestyle==2.10.0
 pyflakes==3.0.1
+PyMySQL==1.1.0
 python-dateutil==2.8.2
 pytz==2023.3
+six==1.16.0
 sqlparse==0.4.4
 tenacity==8.2.2
 tzdata==2023.3
