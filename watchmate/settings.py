@@ -93,10 +93,20 @@ APPEND_SLASH = False
 #         'PORT': '3306',       # Default MySQL port
 #     }
 # }
-
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))   
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'practicedb_ikiv',
+        'USER': 'practicedb_ikiv_user',
+        'PASSWORD': '8uSYKqY22pgKDvRL5C7C6yoOn865K0tm',
+        'HOST': 'dpg-ckt1plmljlhc738isb40-a',  # Typically 'localhost' or the database server IP
+        'PORT': '5432',  # Typically '5432' for PostgreSQL
+    }
 }
+
+# DATABASES = {
+#     "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))   
+# }
 
 CORS_ALLOW_ALL_ORIGINS = True
 
